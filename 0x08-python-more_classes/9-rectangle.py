@@ -7,7 +7,7 @@ class Rectangle:
 
     Attributes:
         number_of_instances (int): The number of Rectangle instances.
-         print_symbol (any): The symbol used for string representation.
+        print_symbol (any): The symbol used for string representation.
     """
 
     number_of_instances = 0
@@ -21,12 +21,12 @@ class Rectangle:
             height (int): The height of the new rectangle.
         """
         type(self).number_of_instances += 1
-        self.height = height
         self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """Get/set the width of the rectangle."""
+        """Get/set the width of the Rectangle."""
         return self.__width
 
     @width.setter
@@ -39,7 +39,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get/set the height of the rectangle."""
+        """Get/set the height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -93,11 +93,11 @@ class Rectangle:
         Represents the rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
-            return ""
+            return ("")
+
         rect = []
         for i in range(self.__height):
-            for j in range(self.__width):
-                rect.append(str(self.print_symbol))
+            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
             if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
