@@ -4,5 +4,5 @@
 
 
 class Rectangle:
-	"""Represent a square."""
+	"""Represent a Rectangle."""
 	None
