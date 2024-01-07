@@ -1,6 +1,18 @@
 #!/usr/bin/python3
+"""Defines is matrix function."""
+
 
 def is_Matrix(matrix):
+    """
+    Check if the input is a valid matrix.
+
+    Args:
+        matrix: Object to be checked.
+
+    Returns:
+        bool: True if the input is a valid matrix, False otherwise.
+    """
+
     if not isinstance(matrix, list) or not matrix:
         return False
     for row in matrix:
@@ -12,7 +24,26 @@ def is_Matrix(matrix):
     return True
 
 
+"""Defines a matrix division function."""
+
+
 def matrix_divided(matrix, div):
+    """
+    Divide each element in a matrix by a divisor.
+
+    Args:
+        matrix (list): A matrix of integers or floats.
+        div (int or float): The divisor.
+
+    Returns:
+        list: New matrix with elements rounded to two decimal places.
+
+    Raises:
+        TypeError: If the matrix is not a valid
+        matrix or if the divisor is not a number.
+        ZeroDivisionError: If the divisor is zero.
+    """
+
     new_matrix = []
 
     if is_Matrix(matrix) is False:
