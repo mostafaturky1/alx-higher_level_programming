@@ -2,6 +2,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     A class representing a rectangle, inheriting from the Base class.
@@ -161,4 +162,5 @@ class Rectangle(Base):
         Returns:
             str: A string representation of the rectangle.
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y}\
+ - {self.width}/{self.height}"
