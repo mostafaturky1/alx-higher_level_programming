@@ -58,7 +58,7 @@ class Square(Rectangle):
         except IndexError:
             pass
 
-        def to_dictionary(self):
-            """ to dictionary to return representation of a Square."""
-            return {'id': self.id, 'x': self.x,
-                    'size': self.size, 'y': self.y}
+    def to_dictionary(self):
+        """ to dictionary to return representation of a Square."""
+        return {'id': self.id, 'x': self.x,
+                'size': self.size, 'y': self.y}
