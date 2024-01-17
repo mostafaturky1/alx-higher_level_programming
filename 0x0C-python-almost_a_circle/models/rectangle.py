@@ -148,7 +148,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """ Update instance attributes with the provided arguments."""
         if len(args) == 0:
-            for key ,v in kwargs.items():
+            for key, v in kwargs.items():
                 self.__setattr__(key, v)
             return
         try:
