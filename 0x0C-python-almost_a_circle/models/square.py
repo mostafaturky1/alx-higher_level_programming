@@ -17,5 +17,4 @@ class Square(Rectangle):
         Returns:
             str: A string representation of the square.
         """
-        return f"[Square] ({self.id}) {self.x}/{self.y}\
- - {self.width}/{self.height}"
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
