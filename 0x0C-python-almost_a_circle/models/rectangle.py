@@ -159,3 +159,8 @@ class Rectangle(Base):
             self.y = args[4]
         except IndexError:
             pass
+
+    def to_dictionary(self):
+        """ to dictionary to return representation of a Rectangle."""
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height':
+                self.height, 'width': self.width}
