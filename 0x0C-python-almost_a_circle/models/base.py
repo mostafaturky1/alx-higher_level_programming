@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ a class which can be accessed """
+import json
 
 
 class Base:
@@ -24,3 +25,9 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """to json string to returns the JSON string representation"""
+        if len(list_dictionaries) == 0 or list_dictionaries is None:
+            return []
+        return json.dumps(list_dictionaries)
