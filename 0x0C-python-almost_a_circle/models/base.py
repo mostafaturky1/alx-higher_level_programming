@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" a class which can be accessed """
+""" A class which can be accessed. """
 import json
 
 
@@ -28,10 +28,11 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """to json string to returns the JSON string representation"""
+        """ JSON string representation of list_dictionaries. """
         if list_dictionaries is None:
             return '[]'
-        return json.dumps(list_dictionaries)
+        else:
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -53,10 +54,25 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """from json string that returns the list of the JSON string """
-        if json_string is None:
+        """Returns the list of the JSON string representation."""
+        if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+            Returns an instance with all the attributes already set
+        """
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls.__name__ == "Rectangle":
+            r2 = Rectangle(3, 8)
+        elif cls.__name__ == "Square":
+            r2 = Square(5)
+        r2.update(**dictionary)
+        return (r2)
 
     @classmethod
     def load_from_file(cls):
