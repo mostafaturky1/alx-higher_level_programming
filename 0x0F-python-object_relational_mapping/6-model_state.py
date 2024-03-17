@@ -1,20 +1,5 @@
 #!/usr/bin/python3
-"""Script to print all states from the database.
-
-This script connects to a MySQL database using SQLAlchemy and retrieves
-all state records from the 'states' table. It then prints the ID and
-name of each state.
-
-Usage:
-    $ python3 script_name.py <username> <password> <database_name>
-
-Args:
-    username (str): The username for the MySQL database.
-    password (str): The password for the MySQL database.
-    database_name (str): The name of the MySQL database.
-
-Example:
-    $ python3 script_name.py root password my_database
+"""Start link class to table in database 
 """
 import sys
 from model_state import Base, State
