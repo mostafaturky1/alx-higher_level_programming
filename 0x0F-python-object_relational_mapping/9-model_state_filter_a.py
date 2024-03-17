@@ -19,7 +19,5 @@ if __name__ == "__main__":
 
     states = session.query(State).\
         filter((State.name.like('%a%'))).order_by(State.id)
-    if (states is None):
-        print("Nothing")
     for state in states:
         print("{}: {}".format(state.id, state.name))
