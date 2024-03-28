@@ -8,7 +8,8 @@ if __name__ == "__main__":
                            passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = conn.cursor()
 
-    result = cur.execute("SELECT * FROM states")
+    result = cur.execute("""SELECT * FROM states WHERE name LIKE binary '{}'
+                         ORDER BY states.id""".format(sys.argv[4]))
     rows = cur.fetchall()
     for row in rows:
         print(row)

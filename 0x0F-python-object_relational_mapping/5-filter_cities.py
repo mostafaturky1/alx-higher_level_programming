@@ -8,10 +8,11 @@ if __name__ == "__main__":
                            passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = conn.cursor()
 
-    result = cur.execute("SELECT * FROM states")
+    result = cur.execute("""SELECT cities.name FROM cities, states WHERE
+                         states.name LIKE binary %s AND
+                         cities.state_id = states.id""", (sys.argv[4], ))
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
-
+    tmp = list(row[0] for row in rows)
+    print(*tmp, sep=", ")
     cur.close()
     conn.close()
